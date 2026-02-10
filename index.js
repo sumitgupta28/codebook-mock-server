@@ -20,6 +20,8 @@ const rules = auth.rewriter({
 // Apply default json-server middlewares
 app.use(middlewares);
 
+app.db = router.db;
+
 // **Important:** The auth middleware must be applied *before* the json-server router
 // The authentication routes will be accessible at /register, /login, /me, etc.
 app.use(auth);
